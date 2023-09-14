@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import modelo.IConsulta;
 import modelo.IExibirInformacoes;
 
-/**
- *
- * @author ANDRE.LUCHESI
- * @param <E>
- */
 public class MeuArrayList<E extends IExibirInformacoes & IConsulta> extends ArrayList<E>{
     
     public void exibirLista(){
