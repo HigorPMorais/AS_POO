@@ -1,6 +1,6 @@
 package modelo;
 
-public class Curso {
+public class Curso implements Comparable<Curso>{
     protected String nome;
     protected int cargaHoraria;
     protected int qtdSemestres;
@@ -61,5 +61,10 @@ public class Curso {
     
     public void exibirInformacoes(){
         System.out.println("Curso: " + nome + " | Carga horária: " + cargaHoraria + " | Quantidade semestre: " + qtdSemestres + " | Coordenador: " + coordenador.getNome() + " | Quantidade alunos: " + qtdAlunosCurso);
+    }
+
+    @Override
+    public int compareTo(Curso o) {
+        return nome.compareTo(o.nome);
     }
 }
