@@ -55,4 +55,7 @@ public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable
         }
         return null;
     }
+    
+    //Ordenar está quase feito, usar o exibir lista ordenada;
+    //Filtro utilizar o for do pesquisa, porém exibir mais de um.
 }
