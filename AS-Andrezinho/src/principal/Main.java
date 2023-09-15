@@ -1,5 +1,6 @@
 package principal;
 
+import Lista.ListaGenerica;
 import controle.CadastroAluno;
 import controle.CadastroCoordenador;
 import controle.CadastroCurso;
@@ -41,13 +42,13 @@ public class Main {
                 "123", new Curso("Tads", 2500, 6, null),
                 LocalDate.now(), "Em Andamento");
         
-        MeuArrayList<Aluno> listaAlunos = new MeuArrayList<>();
+        ListaGenerica<Aluno> listaAlunos = new ListaGenerica<>();
         listaAlunos.add(al);
         listaAlunos.add(al2);
-        listaAlunos.exibirLista();
+        listaAlunos.exibirLista(listaAlunos);
         
         System.out.println("Pesquisa:");
-        Aluno alunoPesquisa = listaAlunos.pesquisar("ana");
+        Aluno alunoPesquisa = listaAlunos.pesquisarLista("ana");
         if(alunoPesquisa != null){
             alunoPesquisa.exibirInformacoes();
         }
