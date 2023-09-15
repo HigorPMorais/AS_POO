@@ -5,11 +5,11 @@ import java.util.Collections;
 import modelo.*;
 import util.Input;
 
-public class ListaGenerica<E extends IConsulta & IExibirInformacoes> extends ArrayList<E>{
+public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable> extends ArrayList<E>{
 
-    public void exibirLista(ArrayList<?> lista){
+    public void exibirLista(ArrayList<E> lista){
         System.out.println("Digite qual opcao de exibicao que voce deseja:");
-        System.out.println("0 - Vai se fuder");
+        System.out.println("0 - Sai do programa");
         System.out.println("1 - Exibir a lista");
         System.out.println("2 - Exibir a lista de forma ordenada");
         int exLis = Input.nextInt();
