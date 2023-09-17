@@ -34,7 +34,6 @@ public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable
         }
         
     }
-    //Filtro utilizar o for do pesquisa, porém exibir mais de um.
     
     public void ordenarLista(ArrayList<E> lista){
         System.out.println("Digite qual tipo de ordenação você deseja:");
@@ -97,6 +96,8 @@ public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable
         return null;
     }
 
+    //Filtro utilizar o for do pesquisa, porém exibir mais de um.
+    
     public void filtrar(){
         
     }
