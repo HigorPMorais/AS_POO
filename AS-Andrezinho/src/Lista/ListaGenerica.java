@@ -58,7 +58,7 @@ public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable
         System.out.println("Digite qual tipo de pesquisa você deseja:");
         System.out.println("0 - Sair do programa");
         System.out.println("1 - Pesquisar por uma chave");
-        System.out.println("2 - Pesquisar por duas chave");
+        System.out.println("2 - Pesquisar por duas chaves");
         int exLis = Input.nextInt();
         
         System.out.println("");
@@ -98,7 +98,45 @@ public class ListaGenerica<E extends IConsulta & IExibirInformacoes & Comparable
 
     //Filtro utilizar o for do pesquisa, porém exibir mais de um.
     
-    public void filtrar(){
+    public void filtrar(String chaveBusca){
+        chaveBusca = chaveBusca.toLowerCase();
+        System.out.println("Digite qual tipo de pesquisa você deseja:");
+        System.out.println("0 - Sair do programa");
+        System.out.println("1 - Filtrar por uma chave");
+        System.out.println("2 - Filtrar por duas chaves");
+        int exLis = Input.nextInt();
         
+        System.out.println("");
+        switch(exLis){
+            case 1 -> {
+                for (E elemento : this) {
+                    if(elemento.getChavePrincipal() instanceof String){
+                        String chaveP = (String) elemento.getChavePrincipal();
+
+                        if(chaveP.equalsIgnoreCase(chaveBusca)){
+                            System.out.println(elemento);
+                        }
+                    }
+                }
+                    }
+            case 2 -> {
+                for (E elemento : this) {
+                    if(elemento.getChavePrincipal() instanceof String && 
+                            elemento.getChaveSecundaria() instanceof String){
+                        String chaveP = (String) elemento.getChavePrincipal();
+                        String chaveS = (String) elemento.getChaveSecundaria();
+
+                        if(chaveP.equalsIgnoreCase(chaveBusca) ||
+                           chaveS.equalsIgnoreCase(chaveBusca)){
+                            System.out.println(elemento);
+                        }
+                    }
+                    else if(elemento.getChavePrincipal().equals(chaveBusca)
+                            || elemento.getChaveSecundaria().equals(chaveBusca)){
+                            System.out.println(elemento);
+                       }
+                }
+            }
+        }
     }
 }
